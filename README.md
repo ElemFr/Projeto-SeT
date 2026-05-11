@@ -1,7 +1,7 @@
 Projeto: Saude e treino
 
 Integrantes:
-- Elem
+- ElemF
 - Jessica
 - Guilherme
 - Joel

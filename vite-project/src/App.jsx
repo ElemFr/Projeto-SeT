@@ -21,7 +21,7 @@ function App() {
           
         </div>
       </nav>
-      <section className='flex flex-row border-2' >
+      <section className='flex flex-row border-2'>
         <div className=' flex flex-col text-white justify-center gap-5'>
 
           <h2 className='w-80 align-text-bottom font-bold text-4xl'>Less planning more progress.</h2>
@@ -32,7 +32,17 @@ function App() {
           <img src={logoST} alt="logoST" />
         </div>
       </section>
-      
+      <section > 
+        <div>
+
+          <h2>Planeje um treino com base nas suas PREFERÊNCIAS</h2>
+
+        </div>
+        <div>
+
+        </div>
+        
+      </section>
     </div>
   );
 }

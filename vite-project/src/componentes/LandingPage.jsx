@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
+import { motion, spring } from "framer-motion"
+import { useNavigate } from 'react-router-dom'
 import logo from '../img/logo.png'
 import logoB from '../img/logoB.png'
 import logoST from '../img/logoST.png'
@@ -9,7 +11,6 @@ import graciane from '../img/graciane.png'
 import matheus from '../img/matheus.png'
 import zilu from '../img/zilu.png'
 import juliana from '../img/juliana.png'
-import { motion, spring } from "framer-motion"
 
 const images = [
   graciane,
@@ -19,6 +20,8 @@ const images = [
 ]
 
 function LandingPage() {
+
+  const navigate = useNavigate()
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -31,7 +34,7 @@ function LandingPage() {
   }
 
   return (
-    <div>
+    <div> 
       <nav className='flex flex-row bg-black justify-between items-center'>
         <div className='flex flex-row justify-between gap-5 items-center'>
 
@@ -39,16 +42,18 @@ function LandingPage() {
           <img src={logoB} alt="logoB" />
 
         </div>
+        
         <div className='flex flex-row gap-5 items-center'>
 
           <p>Treinos</p>
           <p>Ajuda</p>
-          <button className='text-[#FF0000] hover:border-y-4 px-4 py-1'>Logar</button> <p>linkar componente de login: LoginForms</p>
+          <button onClick={() => navigate('/login')}
+          className='text-[#FF0000] hover:border-y-4 px-4 py-1'>Logar</button> { /*linkar componente de login: LoginForms*/ }
           
         </div>
       </nav>
       <section className='flex flex-row justify-between gap-10'>
-        <div className=' flex flex-col justify-center gap-5'>
+        <div className='flex flex-col justify-center gap-5 px-20'>
 
           <h2 className='w-80 align-text-bottom font-bold text-4xl'>Less planning more progress.</h2>
           <p className='align-text-bottom'>Treinos simples, resultados reais. Comece no seu ritmo, acompanhe sua evolução e transforme pequenos hábitos em grandes mudanças</p>
@@ -90,7 +95,7 @@ function LandingPage() {
                     <img 
                       src={image} 
                       className='w-full h-full object-cover rounded'
-                    />
+                    /> 
                   </motion.div>
                 ))}
               </motion.div>

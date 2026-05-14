@@ -3,11 +3,13 @@ import logoImg from '../assets/logoImg.png'
 import logoEsc from '../assets/logoEsc.png'
 import user from '../assets/user.png'
 
-function Navbar(){
+function Navbar({setMenuAberto}){
     return(
         <div className='flex justify-between bg-linear-to-r from-black to-32% to-zinc-800 h-[6.25rem] p-10'>
             <div className='flex items-center'>
-                <button className='cursor-pointer'><img src={hamburguer} alt="" className='pr-9 h-7' /></button> 
+                <button 
+                onClick={() => setMenuAberto(prev => !prev)}
+                className='cursor-pointer'><img src={hamburguer} alt="" className='pr-9 h-7' /></button> 
                 <img src={logoImg} alt="" />
                 <img src={logoEsc} alt="" />
             </div>

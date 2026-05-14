@@ -5,9 +5,9 @@ import logoST from '../img/logoST.png'
 import alter from '../img/alter.png'
 import corrida from '../img/corrida.png'
 import flexivel from '../img/flexivel.png'
-import { motion } from "framer-motion"
+import { motion, spring } from "framer-motion"
 
-const images = [alter,alter,alter]
+const images = [alter,corrida,flexivel]
 
 function LandingPage() {
 
@@ -34,7 +34,7 @@ function LandingPage() {
 
           <p>Treinos</p>
           <p>Ajuda</p>
-          <button className='text-[#FF0000] hover:border-y-4 px-4 py-1'>Logar</button>
+          <button className='text-[#FF0000] hover:border-y-4 px-4 py-1'>Logar</button> <p>linkar componente de login: LoginForms</p>
           
         </div>
       </nav>
@@ -50,9 +50,9 @@ function LandingPage() {
           <img src={logoST} alt="logoST" />
 
         </div>
-      </section>
+      </section> 
       <section > 
-        <div className='flex flex-col  gap-5 '>
+        <div className='flex flex-col gap-5'>
           <div className='flex text-center justify-center'>
 
             <h2 className='font-bold text-2xl w-110 py-20'>Planeje um treino com base nas suas <span className='text-red-600 text-3xl'>PREFERÊNCIAS</span></h2>
@@ -70,32 +70,54 @@ function LandingPage() {
 
           <p className='font-bold text-2xl  py-20'>Veja oque os nossos usuários tem a dizer sobre nosso aplicativo:</p>
           
-          <p>Aqui começa o tal do carrousel</p>
           <div className='relative flex flex-col items-center py-20'>
-            <div className='overflow-hidden'>
-              <motion.div className="flex">
+            <div className='overflow-hidden rounded-4xl'>
+              <motion.div className="flex" 
+                initial={{ x:0 }} 
+                animate={{ x:-currentIndex * 240 }}
+                transition={{type:spring, stiffness:320, damping:40 }}>
                 {images.map((image, index) => (
-                  <motion.div className="p-2" key={index}>
-                    
+                  <motion.div className="min-w-full w-20" key={index}>
                     <img 
-                      src={image.src} 
+                      src={image} 
                       className='w-full h-full object-cover rounded'
                     />
-
                   </motion.div>
                 ))}
               </motion.div>
             </div>
-            <div>
+            <div className='flex flex-row w-full justify-between mt-6'>
+              <button
+                onClick={prevSlide} 
+                className='bg-gray-100 p-3 rounded-full shadow transition-all hover:opacity-70'>
 
+                <p className='text-black text-2xl'>+--</p>
 
+              </button>
+              <div className='flex flex-row gap-3'>
 
+                {images.map((_, index) => (
+                  <p
+                    key={index} 
+                    className={`cursor-pointer text-2xl ${index === currentIndex ? "text-gray-800" : "text-gray-400"
+                    }`}
+                  >*</p>
+                ))}
+
+              </div>
+              <button 
+
+                onClick={nextSlide}
+                className='bg-gray-100 p-3 rounded-full shadow transition-all hover:opacity-70'>
+                <p className='text-black text-2xl'>--+</p>
+
+              </button>
             </div>
           </div>
         </div>
       </section>
       <footer>
-        
+
       </footer>
     </div>
   );

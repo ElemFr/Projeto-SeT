@@ -12,11 +12,22 @@ import matheus from '../img/matheus.png'
 import zilu from '../img/zilu.png'
 import juliana from '../img/juliana.png'
 
+let G = <p>"Os treinos para iniciantes ajudaram muito na minha rotina."</p>
+let M = <p>"Gostei porque o app passa uma vibe motivadora sem ser complicado."</p>
+let Z = <p>"Achei muito legal poder acompanhar minha evolução no aplicativo."</p>
+let J = <p>"As metas diarias me motivam a continuiar treinando."</p>
+
 const images = [
   graciane,
   matheus,
   zilu,
   juliana
+]
+const frases = [
+  G,
+  M,
+  Z,
+  J
 ]
 
 function LandingPage() {
@@ -26,7 +37,7 @@ function LandingPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 &&frases.length - 1 : prev - 1))
   }
 
   const nextSlide = () => {
@@ -82,7 +93,9 @@ function LandingPage() {
         </div>
         <div >
 
-          <p className='font-bold text-2xl  py-20'>Veja oque os nossos usuários tem a dizer sobre nosso aplicativo:</p>
+          <p className='font-bold text-2xl py-20'>Veja oque os nossos usuários tem a dizer sobre nosso aplicativo:</p>
+
+          {/*Carrousel pararelo de imagens*/}
           
           <div className='relative flex flex-col items-center py-20'>
             <div className='overflow-hidden rounded-4xl'>
@@ -95,7 +108,22 @@ function LandingPage() {
                     <img 
                       src={image} 
                       className='w-full h-full object-cover rounded'
-                    /> 
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/*Carrousel pararelo de frases*/}
+
+            <div className='overflow-hidden text-center py-10'>
+              <motion.div className="flex" 
+                initial={{ x:0 }} 
+                animate={{ x:-currentIndex * 320 }}
+                transition={{type:spring, stiffness:320, damping:40 }}>
+                {frases.map((frase, index) => (
+                  <motion.div className="min-w-full w-20" key={index}>
+                    <p>{frase}</p>
                   </motion.div>
                 ))}
               </motion.div>
@@ -131,7 +159,24 @@ function LandingPage() {
         </div>
       </section>
       <footer>
+        <div className='flex flex-row justify-between gap-5 items-center'>
+          <div className='flex items-center'>
 
+            <img src={logo} alt="logo" />
+            <img src={logoB} alt="logoB" className='h-10'/>
+
+          </div>
+          <div className='text-center'>
+
+            <h2 className='text-2xl'>Devs:</h2>
+            <p>Jessica</p>
+            <p>Elem</p>
+            <p>Guilherme</p>
+            <p>Joel</p>
+
+          </div>
+
+        </div>
       </footer>
     </div>
   );

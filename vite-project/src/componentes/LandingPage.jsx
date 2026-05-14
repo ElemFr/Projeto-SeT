@@ -5,9 +5,18 @@ import logoST from '../img/logoST.png'
 import alter from '../img/alter.png'
 import corrida from '../img/corrida.png'
 import flexivel from '../img/flexivel.png'
+import graciane from '../img/graciane.png'
+import matheus from '../img/matheus.png'
+import zilu from '../img/zilu.png'
+import juliana from '../img/juliana.png'
 import { motion, spring } from "framer-motion"
 
-const images = [alter,corrida,flexivel]
+const images = [
+  graciane,
+  matheus,
+  zilu,
+  juliana
+]
 
 function LandingPage() {
 
@@ -74,7 +83,7 @@ function LandingPage() {
             <div className='overflow-hidden rounded-4xl'>
               <motion.div className="flex" 
                 initial={{ x:0 }} 
-                animate={{ x:-currentIndex * 240 }}
+                animate={{ x:-currentIndex * 320 }}
                 transition={{type:spring, stiffness:320, damping:40 }}>
                 {images.map((image, index) => (
                   <motion.div className="min-w-full w-20" key={index}>

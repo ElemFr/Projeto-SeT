@@ -1,7 +1,7 @@
 import LogoImg from '../assets/Logo.png';
 import LogoName from '../assets/LogoName.png';
 
-function Navbar(){
+function LoginNavbar(){
     return(
         <header className="flex items-center justify-between bg-[050505] px-6 py-4 border-b border-[#050505] text-white">
            
@@ -19,4 +19,4 @@ function Navbar(){
         </header>
     )
 }
-export default Navbar
+export default LoginNavbar

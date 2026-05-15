@@ -1,12 +1,12 @@
-import Navbar from './components/Navbar'
-import './App.css'
+
+import LoginNavbar from './components/LoginNavbar'
 import LoginForms from './components/LoginForms'
 
 
-function App() {
+function LoginApp() {
   return(
     <div className='min-h-screen bg-black'>
-      <Navbar/>
+      <LoginNavbar/>
 
       <main className='flex items-center justify-center bg-linear-to-b from-[#050505] to-[#90100B] min-h-[90vh]'>
         <LoginForms/>
@@ -17,4 +17,4 @@ function App() {
   )
 }
 
-export default App
+export default LoginApp

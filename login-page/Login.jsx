@@ -1,9 +1,9 @@
 
-import LoginNavbar from './components/LoginNavbar'
-import LoginForms from './components/LoginForms'
+import LoginNavbar from './components/login/LoginNavbar'
+import LoginForms from './components/login/LoginForms'
 
 
-function LoginApp() {
+function Login() {
   return(
     <div className='min-h-screen bg-black'>
       <LoginNavbar/>
@@ -17,4 +17,4 @@ function LoginApp() {
   )
 }
 
-export default LoginApp
+export default Login

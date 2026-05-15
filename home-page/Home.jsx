@@ -1,18 +1,18 @@
 import { useState } from 'react'
-import './App.css'
+
 
 import { motion } from 'framer-motion'
 
-import Navbar from './components/Navbar'
-import Aside from './components/Aside'
-import Progresso from './components/Progresso'
-import TreinoCasa from './components/TreinoCasa'
-import TreinoAcademia from './components/TreinoAcademia'
-import Corrida from './components/Corrida'
-import Cronograma from './components/Cronograma'
+import Navbar from './homeComponent/Navbar'
+import Aside from './homeComponent/Aside'
+import Progresso from './homeComponent/Progresso'
+import TreinoCasa from './homeComponent/TreinoCasa'
+import TreinoAcademia from './homeComponent/TreinoAcademia'
+import Corrida from './homeComponent/Corrida'
+import Cronograma from './homeComponent/Cronograma'
 
 
-function App() {
+function Home() {
   const [telaAtual, setTelaAtual] = useState('progresso')
 
   const [menuAberto, setMenuAberto] = useState(true)
@@ -68,4 +68,4 @@ function App() {
   )
 }
 
-export default App
+export default Home

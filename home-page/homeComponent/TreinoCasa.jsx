@@ -1,4 +1,4 @@
-import treinoCasa from '../assets/treinoCasa.png'
+import treinoCasa from '../../assets/treinoCasa.png'
 
 function TreinoCasa(){
     return(

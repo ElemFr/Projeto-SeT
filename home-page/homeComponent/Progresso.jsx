@@ -1,4 +1,4 @@
-import progresso from '../assets/progresso.png'
+import progresso from '../../assets/progresso.png'
 
 function Progresso(){
     return(

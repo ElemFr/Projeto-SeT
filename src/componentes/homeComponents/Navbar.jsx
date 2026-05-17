@@ -1,7 +1,7 @@
-import  hamburguer  from '../assets/hamburguer.png'
-import logoImg from '../assets/logoImg.png'
-import logoEsc from '../assets/logoEsc.png'
-import user from '../assets/user.png'
+import  hamburguer  from '../../img/homeImg/hamburguer.png'
+import logoImg from '../../img/homeImg/logoImg.png'
+import logoEsc from '../../img/homeImg/logoEsc.png'
+import user from '../../img/homeImg/user.png'
 
 function Navbar({setMenuAberto}){
     return(
